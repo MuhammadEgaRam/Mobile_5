@@ -28,11 +28,14 @@ final List<String> imgList = [
 ];
 
 final List<Widget> imageSliders = imgList
-    .map((item) => Container(
-          margin: const EdgeInsets.all(5.0),
-          child: ClipRRect(
-            borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-            child: Image.network(item, fit: BoxFit.cover, width: 1000.0),
+    .map((item) => FractionallySizedBox(
+          widthFactor: 1.0,
+          child: Container(
+            margin: const EdgeInsets.all(5.0),
+            child: ClipRRect(
+              borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+              child: Image.network(item, fit: BoxFit.cover),
+            ),
           ),
         ))
     .toList();
@@ -67,7 +70,7 @@ class HomeScreen extends StatelessWidget {
                     Container(
                       height: 36, // Set the height of the Icon
                       child: Icon(
-                        Icons.airplane_ticket,
+                        Icons.local_activity_outlined,
                         size: 36,
                       ),
                     ),
@@ -75,7 +78,7 @@ class HomeScreen extends StatelessWidget {
                       width: 36, // Set the width of the Icon
                       height: 36, // Set the height of the Icon
                       child: Icon(
-                        Icons.heart_broken,
+                        Icons.favorite_border_outlined,
                         size: 36,
                       ),
                     ),
@@ -142,7 +145,8 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          padding: EdgeInsets.all(15.0),
+                          margin: EdgeInsets.only(right: 5.0),
+                          padding: EdgeInsets.all(10.0),
                           width: 150,
                           height: 75,
                           decoration: BoxDecoration(
