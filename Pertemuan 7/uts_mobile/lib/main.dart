@@ -19,12 +19,12 @@ class MainApp extends StatelessWidget {
 }
 
 final List<String> imgList = [
-  'https://lottemart.co.id/upload/2021/04/Kalender-April-2021-BNI-Kalender-Agustus.jpg',
+  'https://static.republika.co.id/uploads/images/inpicture_slide/pt-bank-negara-indonesia-persero-tbk-atau-bni-memberikan_230705104532-614.jpg',
   'https://lelogama.go-jek.com/post_featured_image/promo-hangout-bandung-1png.png',
   'https://web.pln.co.id/statics/uploads/2023/05/WhatsApp-Image-2023-05-03-at-10.06.01.jpeg',
   'https://tri.co.id/image/files/20220208TurunanMochanECommerceekstraKuota5GBWebsiteDekstopIND.jpg',
   'https://www.online-pajak.com/wp-content/uploads/2023/09/promo-page_New-Visa.png',
-  'https://www.google.com/url?sa=i&url=https%3A%2F%2Fkartukredit.bri.co.id%2Fpromotion%2Fpromo-visa&psig=AOvVaw14AhqT90FHtK9uDirid393&ust=1698913839417000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCLjLrLGxooIDFQAAAAAdAAAAABAE'
+  'https://bankmega.com/media/filer_public/ba/d6/bad689bb-68cd-4cf3-8650-15e0734bb6f7/visacontactless-bmnew-01.jpg'
 ];
 
 final List<Widget> imageSliders = imgList
