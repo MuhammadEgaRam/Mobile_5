@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../main.dart';
 
 class History extends StatelessWidget {
-  const History({super.key});
+  const History({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +13,8 @@ class History extends StatelessWidget {
         backgroundColor: Colors.grey[300],
         appBar: AppBar(
           backgroundColor: Colors.red,
-          title: const Center(
-            child: Text('Transaction History'),
-          ),
+          title: const Text('Transaction History'),
+          centerTitle: true,
           bottom: const TabBar(
             indicatorSize: TabBarIndicatorSize.tab,
             tabs: [
@@ -28,20 +27,30 @@ class History extends StatelessWidget {
             ],
           ),
         ),
-        body: const TabBarView(
+        body: TabBarView(
           children: [
-            Center(
-              child: Text('Pending Tab'),
+            TabView(
+              text: 'All transaction is completed!',
+              subText: 'Any pending transaction will appear in this page',
             ),
-            Center(
-              child: Text('Done Tab'),
+            TabView(
+              text: 'Done',
+              subText: 'Any done transaction will appear in this page',
             ),
           ],
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          backgroundColor: Colors.red,
+          foregroundColor: Colors.white,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          child: const Icon(Icons.qr_code_2_outlined),
         ),
         bottomNavigationBar: BottomAppBar(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            mainAxisSize: MainAxisSize.max,
             children: [
               NavIcon(
                 iconData: Icons.home_outlined,
@@ -58,24 +67,20 @@ class History extends StatelessWidget {
                 iconData: Icons.history,
                 name: "History",
                 onTap: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => History(),
-                    ),
-                  );
+                  // Do something when the History tab is tapped
                 },
               ),
               Padding(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(top: 25),
+                      padding: const EdgeInsets.only(top: 25),
                       child: Text(
                         "Pay",
                         style: TextStyle(
-                          color: Colors.grey,
+                          color: const Color(0xFFFF0000),
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -94,6 +99,39 @@ class History extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class TabView extends StatelessWidget {
+  final String text;
+  final String? subText;
+
+  const TabView({Key? key, required this.text, this.subText});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image(
+            image: NetworkImage(
+              'https://cdni.iconscout.com/illustration/premium/thumb/payment-with-swiping-machine-5624700-4685021.png',
+              scale: 3,
+            ),
+          ),
+          Text(
+            text,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+            ),
+          ),
+          if (subText != null) const SizedBox(height: 8),
+          Text(subText ?? ''),
+        ],
       ),
     );
   }
@@ -123,12 +161,12 @@ class NavIcon extends StatelessWidget {
           children: [
             Icon(
               iconData,
-              color: Colors.grey,
+              color: const Color.fromARGB(255, 255, 0, 0),
             ),
             Text(
               name,
               style: const TextStyle(
-                color: Colors.grey,
+                color: Color.fromARGB(255, 255, 0, 0),
                 fontWeight: FontWeight.bold,
               ),
             ),

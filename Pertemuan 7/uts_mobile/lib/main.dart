@@ -33,7 +33,7 @@ final List<Widget> imageSliders = imgList
           child: Container(
             margin: const EdgeInsets.all(5.0),
             child: ClipRRect(
-              borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+              borderRadius: const BorderRadius.all(Radius.circular(15.0)),
               child: Image.network(item, fit: BoxFit.cover),
             ),
           ),
@@ -50,317 +50,343 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          Column(children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(10.0),
-                  margin: const EdgeInsets.only(right: 20.0),
-                  child: Image(
-                    image: NetworkImage(
-                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToIhy4KyY-ALuwCR9Z3_zCTW--fU_3agJjOItWx2hLBA&s'),
-                    width: 36,
-                    height: 36,
-                    fit: BoxFit.scaleDown,
-                  ),
+          Container(
+            padding: EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage(
+                  'https://cdn.pixabay.com/photo/2017/04/22/03/13/city-2250533_1280.png',
                 ),
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                      height: 36, // Set the height of the Icon
-                      child: Icon(
-                        Icons.local_activity_outlined,
-                        size: 36,
+                      child: const Image(
+                        image: NetworkImage(
+                            'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/LinkAja.svg/2048px-LinkAja.svg.png'),
+                        width: 40,
                       ),
                     ),
+                    Spacer(),
                     Container(
-                      width: 36, // Set the width of the Icon
-                      height: 36, // Set the height of the Icon
-                      child: Icon(
-                        Icons.favorite_border_outlined,
-                        size: 36,
+                        decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 255, 255, 255),
+                            border: Border.all(
+                              color: Colors.grey,
+                              width: 0.5,
+                            ),
+                            borderRadius: BorderRadius.circular(12.0)),
+                        padding: EdgeInsets.all(10),
+                        child: CustomIcon(
+                          imageUrl:
+                              'https://cdn-icons-png.flaticon.com/128/2089/2089363.png',
+                          width: 24,
+                          height: 24,
+                        )),
+                    SizedBox(
+                      width: 12,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.grey,
+                            width: 0.5,
+                          ),
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12.0)),
+                      padding: EdgeInsets.all(10),
+                      child: CustomIcon(
+                        imageUrl:
+                            'https://cdn-icons-png.flaticon.com/128/707/707680.png',
+                        width: 24,
+                        height: 24,
                       ),
                     ),
                   ],
-                )
+                ),
               ],
             ),
-            Container(
-              width: double.infinity,
-              height: 140,
-              decoration: BoxDecoration(
-                color: Colors.red,
-                border: Border.all(color: Colors.red, width: 2.0),
-                borderRadius: BorderRadius.circular(10.0),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 5, left: 20, right: 20, bottom: 25),
+            width: double.infinity,
+            height: 140,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              image: DecorationImage(
+                image: NetworkImage(
+                    'https://media.rainpos.com/Checker/B8038-RED.jpg'),
+                fit: BoxFit.cover,
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    margin: EdgeInsets.all(10),
-                    child: Text(
-                      'Hi, Muhammad Ega Rama Fernanda',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.all(10),
+                  child: Text(
+                    'Hi, Muhammad Ega Rama Fernanda',
+                    style: TextStyle(
+                      color: Colors.white,
                     ),
                   ),
-                  Container(
-                    margin: EdgeInsets.all(10),
-                    child: Row(
-                      children: [
-                        Container(
-                          margin: EdgeInsets.only(right: 5.0),
-                          padding: EdgeInsets.all(10.0),
-                          width: 150,
-                          height: 75,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(color: Colors.white, width: 2.0),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Your Balance',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Text(
-                                    'Rp. 10.000',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  Icon(Icons.arrow_forward),
-                                ],
-                              ),
-                            ],
-                          ),
+                ),
+                Container(
+                  margin: EdgeInsets.all(10),
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: 5.0),
+                        padding: EdgeInsets.all(10.0),
+                        width: 150,
+                        height: 75,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(color: Colors.white, width: 2.0),
+                          borderRadius: BorderRadius.circular(10.0),
                         ),
-                        Container(
-                          margin: EdgeInsets.only(right: 5.0),
-                          padding: EdgeInsets.all(10.0),
-                          width: 150,
-                          height: 75,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(color: Colors.white, width: 2.0),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Bonus Balance',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Your Balance',
+                              style: TextStyle(
+                                color: Colors.black,
                               ),
-                              Row(
-                                children: [
-                                  Text(
-                                    '0',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold,
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  'Rp. 10.000',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(width: 8),
+                                Container(
+                                  width: 20,
+                                  height: 20,
+                                  decoration: BoxDecoration(
+                                      color: Colors.red,
+                                      shape: BoxShape.circle),
+                                  child: Center(
+                                    child: Icon(
+                                      Icons.arrow_forward,
+                                      color: Colors.white,
+                                      size: 10,
                                     ),
                                   ),
-                                  Icon(Icons.arrow_forward),
-                                ],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(right: 5.0),
+                        padding: EdgeInsets.all(10.0),
+                        width: 150,
+                        height: 75,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(color: Colors.white, width: 2.0),
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Bonus Balance',
+                              style: TextStyle(
+                                color: Colors.black,
                               ),
-                            ],
-                          ),
-                        )
-                      ],
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  '0',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(width: 8),
+                                Container(
+                                  width: 20,
+                                  height: 20,
+                                  decoration: BoxDecoration(
+                                      color: Colors.red,
+                                      shape: BoxShape.circle),
+                                  child: Center(
+                                    child: Icon(
+                                      Icons.arrow_forward,
+                                      color: Colors.white,
+                                      size: 10,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 25),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(15),
+              border: Border.all(
+                color: Colors.grey,
+                width: 0.5,
+              ),
+            ),
+            padding: EdgeInsets.all(5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  width: 80,
+                  child: Column(children: [
+                    Icon(
+                      Icons.add_card_outlined,
+                      size: 25,
                     ),
-                  ),
-                ],
-              ),
+                    Text("TopUp"),
+                  ]),
+                ),
+                Container(
+                  width: 80,
+                  child: Column(children: [
+                    Icon(
+                      Icons.money,
+                      size: 25,
+                    ),
+                    Text(
+                      "Send Money",
+                      textAlign: TextAlign.center,
+                    ),
+                  ]),
+                ),
+                Container(
+                  width: 80,
+                  child: Column(children: [
+                    Icon(Icons.airplane_ticket_outlined),
+                    Text("Ticket Code"),
+                  ]),
+                ),
+                Container(
+                  width: 80,
+                  child: Column(children: [
+                    Icon(Icons.grid_view),
+                    Text("See All"),
+                  ]),
+                ),
+              ],
             ),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(15),
-              ),
-              margin: EdgeInsets.all(10.0),
-              padding: EdgeInsets.all(5),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    width: 80,
-                    child: Column(children: [
-                      Icon(
-                        Icons.add_card_outlined,
-                        size: 25,
-                      ),
-                      Text("TopUp"),
-                    ]),
-                  ),
-                  Container(
-                    width: 80,
-                    child: Column(children: [
-                      Icon(
-                        Icons.money,
-                        size: 25,
-                      ),
-                      Text(
-                        "Send Money",
-                        textAlign: TextAlign.center,
-                      ),
-                    ]),
-                  ),
-                  Container(
-                    width: 80,
-                    child: Column(children: [
-                      Icon(Icons.airplane_ticket_outlined),
-                      Text("Ticket Code"),
-                    ]),
-                  ),
-                  Container(
-                    width: 80,
-                    child: Column(children: [
-                      Icon(Icons.airplane_ticket_outlined),
-                      Text("See All"),
-                    ]),
-                  ),
-                ],
-              ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 25),
+            padding: EdgeInsets.all(5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  width: 80,
+                  child: Column(children: [
+                    Icon(Icons.add_card_outlined),
+                    Text("Pulsa"),
+                  ]),
+                ),
+                Container(
+                  width: 80,
+                  child: Column(children: [
+                    Icon(Icons.electrical_services),
+                    Text("Electricity"),
+                  ]),
+                ),
+                Container(
+                  width: 80,
+                  child: Column(children: [
+                    Icon(Icons.local_hospital),
+                    Text("BPJS"),
+                  ]),
+                ),
+                Container(
+                  width: 80,
+                  child: Column(children: [
+                    Icon(Icons.games),
+                    Text("mgames"),
+                  ]),
+                ),
+              ],
             ),
-            Container(
-              margin: EdgeInsets.all(10.0),
-              padding: EdgeInsets.all(5),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    width: 80,
-                    child: Column(children: [
-                      Icon(Icons.add_card_outlined),
-                      Text("Pulsa"),
-                    ]),
-                  ),
-                  Container(
-                    width: 80,
-                    child: Column(children: [
-                      Icon(Icons.money),
-                      Text("Electricity"),
-                    ]),
-                  ),
-                  Container(
-                    width: 80,
-                    child: Column(children: [
-                      Icon(Icons.airplane_ticket_outlined),
-                      Text("BPJS"),
-                    ]),
-                  ),
-                  Container(
-                    width: 80,
-                    child: Column(children: [
-                      Icon(Icons.airplane_ticket_outlined),
-                      Text("mgames"),
-                    ]),
-                  ),
-                ],
-              ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 10, left: 20, right: 20, bottom: 10),
+            padding: EdgeInsets.all(5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  width: 80,
+                  child: Column(children: [
+                    Icon(Icons.wifi_tethering),
+                    Text("Internet"),
+                  ]),
+                ),
+                Container(
+                  width: 80,
+                  child: Column(children: [
+                    Icon(Icons.water_damage_outlined),
+                    Text("PDAM"),
+                  ]),
+                ),
+                Container(
+                  width: 80,
+                  child: Column(children: [
+                    Icon(Icons.account_balance_wallet_outlined),
+                    Text(
+                      "Kartu Elektronik",
+                      textAlign: TextAlign.center,
+                    ),
+                  ]),
+                ),
+                Container(
+                  width: 80,
+                  child: Column(children: [
+                    Icon(Icons.more_horiz),
+                    Text("More"),
+                  ]),
+                ),
+              ],
             ),
-            Container(
-              margin: EdgeInsets.all(10),
-              padding: EdgeInsets.all(5),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    width: 80,
-                    child: Column(children: [
-                      Icon(Icons.add_card_outlined),
-                      Text("Internet"),
-                    ]),
-                  ),
-                  Container(
-                    width: 80,
-                    child: Column(children: [
-                      Icon(Icons.money),
-                      Text("PDAM"),
-                    ]),
-                  ),
-                  Container(
-                    width: 80,
-                    child: Column(children: [
-                      Icon(Icons.airplane_ticket_outlined),
-                      Text(
-                        "Kartu Elektronik",
-                        textAlign: TextAlign.center,
-                      ),
-                    ]),
-                  ),
-                  Container(
-                    width: 80,
-                    child: Column(children: [
-                      Icon(Icons.airplane_ticket_outlined),
-                      Text("More"),
-                    ]),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.all(10),
-              padding: EdgeInsets.all(5),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    width: 80,
-                    child: Column(children: [
-                      Icon(Icons.add_card_outlined),
-                      Text("TopUp"),
-                    ]),
-                  ),
-                  Container(
-                    width: 80,
-                    child: Column(children: [
-                      Icon(Icons.money),
-                      Text("Send Money"),
-                    ]),
-                  ),
-                  Container(
-                    width: 80,
-                    child: Column(children: [
-                      Icon(Icons.airplane_ticket_outlined),
-                      Text("Ticket Code"),
-                    ]),
-                  ),
-                  Container(
-                    width: 80,
-                    child: Column(children: [
-                      Icon(Icons.airplane_ticket_outlined),
-                      Text("See All"),
-                    ]),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.all(10),
-              child: CarouselSlider(
-                options: CarouselOptions(
-                  height: 100.0,
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 3, left: 20, right: 20, bottom: 10),
+            child: CarouselSlider(
+              options: CarouselOptions(
+                  height: 150.0,
                   enlargeCenterPage: true,
                   autoPlay: true,
                   enlargeFactor: 0.2,
-                ),
-                items: imageSliders,
-              ),
+                  autoPlayInterval: Duration(seconds: 3),
+                  autoPlayAnimationDuration: Duration(milliseconds: 2000)),
+              items: imageSliders,
             ),
-          ]),
+          ),
         ],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
@@ -402,7 +428,7 @@ class HomeScreen extends StatelessWidget {
                     child: Text(
                       "Pay",
                       style: TextStyle(
-                        color: Colors.grey,
+                        color: const Color.fromARGB(255, 255, 0, 0),
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -449,17 +475,43 @@ class NavIcon extends StatelessWidget {
           children: [
             Icon(
               iconData,
-              color: Colors.grey,
+              color: Color.fromARGB(255, 255, 5, 5),
             ),
             Text(
               name,
               style: const TextStyle(
-                color: Colors.grey,
+                color: Color.fromARGB(255, 255, 5, 5),
                 fontWeight: FontWeight.bold,
               ),
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class CustomIcon extends StatelessWidget {
+  final String imageUrl;
+  final double width;
+  final double height;
+
+  CustomIcon({
+    required this.imageUrl,
+    this.width = 30,
+    this.height = 30,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        // Handle the tap event for the custom icon here
+      },
+      child: Image.network(
+        imageUrl,
+        width: width,
+        height: height,
       ),
     );
   }
